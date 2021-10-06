@@ -36,6 +36,7 @@ public class Main {
         ArrayList<Order> orderArrayList = new ArrayList<>();
         orderArrayList.add(order1);
         orderArrayList.add(order2);
+        orderArrayList.add(order3);
 
         Hotel toanHotel = new Hotel(orderArrayList, customerArrayList, roomArrayList);
 
@@ -61,5 +62,7 @@ public class Main {
         toanHotel.findRoomByName("Dinh");
 
         toanHotel.CountCustomerByRoom("001");
+
+        System.out.println(toanHotel.getAllTotalPrice());
     }
 }
