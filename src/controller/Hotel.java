@@ -38,7 +38,7 @@ public class Hotel {
         }
     }
 
-    public void checkRoom(String roomNumber){
+    public void checkRoom(String roomNumber){           //kiểm tra phòng trống, tìm theo số phòng
         for (int i=0; i<roomArrayList.size(); i++){
             if(roomArrayList.get(i).getRoomNumber().equals(roomNumber)){
                 if(roomArrayList.get(i).isEmpty()){
@@ -54,14 +54,14 @@ public class Hotel {
         roomArrayList.add(room);
     }
 
-    public void removeRoom(String roomNumber){
+    public void removeRoom(String roomNumber){          //xóa phòng, tìm theo số phòng
         for (int i=0; i< roomArrayList.size(); i++){
             if (roomArrayList.get(i).getRoomNumber().equals(roomNumber))
                 roomArrayList.remove(i);
         }
     }
 
-    public void editeRoom(String roomNumber, Room room){
+    public void editeRoom(String roomNumber, Room room){        //xóa phòng, tìm theo số phòng
         for (int i=0; i< roomArrayList.size(); i++){
             if (roomArrayList.get(i).getRoomNumber().equals(roomNumber))
                 roomArrayList.set(i, room);
@@ -72,21 +72,21 @@ public class Hotel {
         customerArrayList.add(customer);
     }
 
-    public void removeCustomer(String identityCard){
+    public void removeCustomer(String identityCard){           //xóa khách, tìm theo cmnd
         for (int i=0; i<customerArrayList.size(); i++){
             if (customerArrayList.get(i).getIdentityCard().equals(identityCard))
                 customerArrayList.remove(i);
         }
     }
 
-    public void editCustomer(String identityCard, Customer customer){
+    public void editCustomer(String identityCard, Customer customer){       //sửa khách tìm theo cmnd
         for (int i=0; i<customerArrayList.size(); i++){
             if (customerArrayList.get(i).getIdentityCard().equals(identityCard))
                 customerArrayList.set(i, customer);
         }
     }
 
-    public double getAllTotalPrice(){
+    public double getAllTotalPrice(){          //tính tổng tiền hóa đơn
         double total = 0;
         for (Order order: orderArrayList) {
             total += order.getTotalPrice();
@@ -94,7 +94,7 @@ public class Hotel {
         return total;
     }
 
-    public void findRoomByName(String name){
+    public void findRoomByName(String name){           //tìm phòng theo tên
         for (int i=0; i<orderArrayList.size(); i++){
             if (orderArrayList.get(i).getCustomer().getName().equals(name))
                 System.out.println(orderArrayList.get(i).getRoom());
