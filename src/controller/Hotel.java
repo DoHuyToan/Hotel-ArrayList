@@ -20,22 +20,13 @@ public class Hotel {
         this.roomArrayList = roomArrayList;
     }
 
-    public void displayOrder(){
-        for (Order order: orderArrayList) {
-            System.out.println(order);
+    public void CountCustomerByRoom(String roomNumber){      //kiểm số lượt thuê theo từng phòng
+        int count = 0;
+        for (int i=0; i<orderArrayList.size(); i++){
+            if(orderArrayList.get(i).getRoom().getRoomNumber().equals(roomNumber))
+                count++;
         }
-    }
-
-    public void displayRoom(){
-        for (Room room:roomArrayList) {
-            System.out.println(room);
-        }
-    }
-
-    public void displayCustomer(){
-        for (Customer customer:customerArrayList) {
-            System.out.println(customer);
-        }
+        System.out.println(count);
     }
 
     public void checkRoom(String roomNumber){           //kiểm tra phòng trống, tìm theo số phòng
@@ -101,6 +92,23 @@ public class Hotel {
         }
     }
 
+    public void displayOrder(){
+        for (Order order: orderArrayList) {
+            System.out.println(order);
+        }
+    }
+
+    public void displayRoom(){
+        for (Room room:roomArrayList) {
+            System.out.println(room);
+        }
+    }
+
+    public void displayCustomer(){
+        for (Customer customer:customerArrayList) {
+            System.out.println(customer);
+        }
+    }
 
     public ArrayList<Order> getOrderArrayList() {
         return orderArrayList;

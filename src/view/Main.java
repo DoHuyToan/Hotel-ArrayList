@@ -24,13 +24,18 @@ public class Main {
 
         Customer Duy = new Customer("Duy", "1/1/1991", "11111");
         Customer Dinh = new Customer("Dinh", "1/1/1998", "22222");
+        Customer Thao = new Customer("Thao", "1/1/1991", "55555");
         ArrayList<Customer> customerArrayList = new ArrayList<>();
         customerArrayList.add(Duy);
         customerArrayList.add(Dinh);
+        customerArrayList.add(Thao);
 
         Order order1 = new Order(LocalDate.of(2021, 10, 1), LocalDate.of(2021, 10,6),room1, Dinh);
+        Order order2 = new Order(LocalDate.of(2021,10,3), LocalDate.of(2021, 10,6), room1,Duy);
+        Order order3 = new Order(LocalDate.of(2021, 10, 2), LocalDate.of(2021, 10,6), room3, Thao);
         ArrayList<Order> orderArrayList = new ArrayList<>();
         orderArrayList.add(order1);
+        orderArrayList.add(order2);
 
         Hotel toanHotel = new Hotel(orderArrayList, customerArrayList, roomArrayList);
 
@@ -55,9 +60,6 @@ public class Main {
         toanHotel.displayOrder();
         toanHotel.findRoomByName("Dinh");
 
-
-
-
+        toanHotel.CountCustomerByRoom("001");
     }
-
 }
