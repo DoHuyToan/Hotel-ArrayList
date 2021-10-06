@@ -41,6 +41,13 @@ public class Hotel {
         }
     }
 
+    public void findRoomByName(String name){           //tìm phòng theo tên
+        for (int i=0; i<orderArrayList.size(); i++){
+            if (orderArrayList.get(i).getCustomer().getName().equals(name))
+                System.out.println(orderArrayList.get(i).getRoom());
+        }
+    }
+
     public void addRoom(Room room){
         roomArrayList.add(room);
     }
@@ -85,12 +92,7 @@ public class Hotel {
         return total;
     }
 
-    public void findRoomByName(String name){           //tìm phòng theo tên
-        for (int i=0; i<orderArrayList.size(); i++){
-            if (orderArrayList.get(i).getCustomer().getName().equals(name))
-                System.out.println(orderArrayList.get(i).getRoom());
-        }
-    }
+
 
     public void displayOrder(){
         for (Order order: orderArrayList) {
